@@ -11,23 +11,4 @@ module.exports = function (app) {
     })
   );
 
-  // Proxy middleware for /api/cwm
-  app.use(
-    '/api/cwm',
-    createProxyMiddleware({
-      target: 'http://localhost:8082',
-      changeOrigin: true,
-      pathRewrite: { '^/api/cwm': '' },
-    })
-  );
-
-  // Proxy middleware for /api/elog
-  app.use(
-    '/api/elog',
-    createProxyMiddleware({
-      target: 'http://localhost:8083',
-      changeOrigin: true,
-      pathRewrite: { '^/api/elog': '' },
-    })
-  );
 };
