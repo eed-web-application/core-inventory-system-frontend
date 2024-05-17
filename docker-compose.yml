@@ -3,7 +3,6 @@ services:
     build:
       context: .
       args:
-        - API_ENDPOINT_CWM=/api/cwm/v1
         - API_ENDPOINT_CIS=/api/cis/v1
     ports:
       - "80:80"
