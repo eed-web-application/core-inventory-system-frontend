@@ -14,7 +14,7 @@ function Sidebar() {
 
   const buttons = [
     { path: "/home", icon: faHome, label: "Home" },
-    { path: "/inventory", icon: faBox, label: "Inventory" },
+    { path: "/cis", icon: faBox, label: "Inventory" },
     { path: "/cwm", icon: faTicket, label: "Issues" },
     { path: "/elog", icon: faNewspaper, label: "eLogs" },
     { path: "/815", icon: faClock, label: "8:15" },
@@ -25,10 +25,22 @@ function Sidebar() {
   const renderButtons = () => {
     return buttons.map((button, index) => (
       <div key={index}>
-        {/* Check if the button is for "eLogs" */}
         {button.path === "/elog" ? (
           <a href="https://accel-webapp-dev.slac.stanford.edu/elog" target="_blank" rel="noopener noreferrer">
-            {/* Use 'a' tag instead of 'Link' */}
+            <button
+              className={`icon-button ${
+                activeButton === button.path ? "active-button" : ""
+              }`}
+            >
+              <div className="button-label">
+                <FontAwesomeIcon icon={button.icon} className="icon" title={button.label} />
+                <div className="small-label">{button.label}</div>
+                <span className="label">{button.label}</span>
+              </div>
+            </button>
+          </a>
+        ) : button.path === "/cwm" ? (
+          <a href="https://accel-webapp-dev.slac.stanford.edu/cwm" target="_blank" rel="noopener noreferrer">
             <button
               className={`icon-button ${
                 activeButton === button.path ? "active-button" : ""
@@ -42,10 +54,9 @@ function Sidebar() {
             </button>
           </a>
         ) : (
-          // For other buttons, continue using 'Link' component
           <Link to={button.path}>
             <button
-              onClick={() => handleClick(button.label.toLowerCase(), button.path)}
+              onClick={() => handleClick(button.path)}
               className={`icon-button ${
                 activeButton === button.path ? "active-button" : ""
               }`}
@@ -61,7 +72,6 @@ function Sidebar() {
       </div>
     ));
   };
-  
 
   // Handle button clicks and update the active button
   const handleClick = (buttonName, path) => {

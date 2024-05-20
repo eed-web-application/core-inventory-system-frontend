@@ -1,5 +1,5 @@
 import React from 'react';
-import Sidebar from '../components/Sidebar/Sidebar';
+import Sidebar from '../components/Sidebar/Sidebar';  // Import Sidebar from the ui component library
 import Header from '../components/Header';
 import '../App.css';
 

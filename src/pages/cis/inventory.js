@@ -80,7 +80,7 @@ const Inventory = () => {
 
   // Function to handle click on a card item and navigate to its detail page
   const handleCardClick = (id) => {
-    history.push(`/inventory/${id}`); // Navigate to detail page with the item _id
+    history.push(`/cis/${id}`); // Navigate to detail page with the item _id
   };
 
   // Function to capitalize the first letter and replace dashes with spaces in item names
@@ -155,7 +155,7 @@ const Inventory = () => {
           {inventory && inventory.length > 0 ? (
             inventory.map((item) => (
               <div key={item.id} onClick={() => handleCardClick(item.id)}>
-                <Link to={`/inventory/${item.id}`} style={{ textDecoration: 'none' }}>
+                <Link to={`/cis/${item.id}`} style={{ textDecoration: 'none' }}>
                   <div className="inventory-card">
                     <div className="inventoryleft-column">
                       <div className="slac-id-label">SLAC ID</div>

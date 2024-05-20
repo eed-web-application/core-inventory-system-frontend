@@ -118,8 +118,8 @@ const ItemDetails = () => {
   // Breadcrumb items for navigation
   const breadcrumbItems = [
     { label: "Home", link: "/home" },
-    { label: "Inventory", link: "/inventory" },
-    { label: "Item Details", link: "/inventory/asset-details" },
+    { label: "Inventory", link: "/cis" },
+    { label: "Item Details", link: "/cis/asset-details" },
   ];
 
   // TreeView component for rendering nested items in a table
@@ -152,7 +152,7 @@ const ItemDetails = () => {
             <tr>
               <td colSpan="3">
                 {/* Link to the detail page for each item */}
-                <Link to={`/inventory/${item.id}`} style={{ textDecoration: "none", color: "inherit" }}>
+                <Link to={`/cis/${item.id}`} style={{ textDecoration: "none", color: "inherit" }}>
                   <div style={{ position: "relative", padding: "10px", marginLeft: `${level * 20 + 10}px`, borderRadius: "5px", background: item.id === location.pathname.split("/").pop() ? "#ddd" : "none" }}>
                     <div style={{ position: "absolute", bottom: "-2px", left: "-10px", width: "10px", height: "100%" }}>
                       <div style={{ position: "absolute", bottom: "0", left: "0", width: "100%", height: "10px" }}></div> {/*, borderBottom: "1px solid #ddd" */}
