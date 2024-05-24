@@ -15,11 +15,11 @@ function AppRouter() {
       <Layout>
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route path="/cis/admin" component={Admin} />
           <Route path="/cis/:id" component={ItemDetails} />
           <Route path="/cis" component={Inventory} />
           <Route path="/home" component={Home} />
-          <Route path="/cis/admin" component={Admin} />
-          <Route path="/cis/admin/:classId" component={ClassDetails} />
+          {/* <Route path="/cis/admin/:classId" component={ClassDetails} /> */}
           <Route path="/815" component={Meeting} />
           <Route path="/settings" component={Settings} />
         </Switch>
